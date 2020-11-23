@@ -37,10 +37,13 @@ app.put("/repositories/:id", (request, response) => {
   const { title, url, techs } = request.body;
   const repositorie = {
     id,
-    title,
     url,
+    title,
     techs
   }
+  repositories[repositorieIndex] = repositorie;
+  // console.log(repositorie)
+  return response.json(repositorie);
   
 });
 

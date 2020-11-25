@@ -49,7 +49,7 @@ app.delete("/repositories/:id", (request, response) => {
     return response.status(400).json({ error: "Repositorie not found!!!" })
   }
   repositories.splice(repositorieIndex, 1);
-  return response.status(204).send();58592357-5513-4943-8118-8efd9a814935
+  return response.status(204).send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {

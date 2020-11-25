@@ -15,10 +15,10 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  const { title, url, techs } = request.body;
+  const { id, title, url, techs } = request.body;
   const likes = 0;
   const repositorie = {
-    id: uuid(),
+    id: uuid() || id,
     title,
     url,
     techs,
@@ -49,7 +49,7 @@ app.delete("/repositories/:id", (request, response) => {
     return response.status(400).json({ error: "Repositorie not found!!!" })
   }
   repositories.splice(repositorieIndex, 1);
-  return response.status(204).send();
+  return response.status(204).send();58592357-5513-4943-8118-8efd9a814935
 });
 
 app.post("/repositories/:id/like", (request, response) => {

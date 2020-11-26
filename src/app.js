@@ -18,7 +18,7 @@ app.post("/repositories", (request, response) => {
   const { id, title, url, techs } = request.body;
   const likes = 0;
   const repositorie = {
-    id: uuid() || id,
+    id: id !== "" || uuid(),
     title,
     url,
     techs,
